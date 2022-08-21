@@ -136,8 +136,3 @@ dmypy.json
 .downloads/
 .screenshots/
 allure-result/
-.cat_pictures/
-
-*.pdf
-*.xlsx
-*.csv
