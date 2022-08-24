@@ -5,12 +5,12 @@ from fpdf import FPDF
 from sqlalchemy import create_engine, MetaData, Table
 
 banking_db_path = "C:\\Users\\RomanBarabash\\PycharmProjects\\oop_apps\\tickets_booking_app\\banking.db"
-banking_db = create_engine('sqlite:///%s' % banking_db_path, echo=True)
+banking_db = create_engine(f'sqlite:///{banking_db_path}', echo=True)
 banking_db_metadata = MetaData()
 card_table = Table('Card', banking_db_metadata, autoload=True, autoload_with=banking_db)
 
 cinema_db_path = "C:\\Users\\RomanBarabash\\PycharmProjects\\oop_apps\\tickets_booking_app\\cinema.db"
-cinema_db = create_engine('sqlite:///%s' % cinema_db_path, echo=True)
+cinema_db = create_engine(f'sqlite:///{cinema_db_path}', echo=True)
 cinema_db_metadata = MetaData()
 seat_table = Table('Seat', cinema_db_metadata, autoload=True, autoload_with=cinema_db)
 
@@ -152,12 +152,19 @@ class Ticket:
 
 
 if __name__ == "__main__":
-    name = input("Your full name: ")
-    seat_id = input("Preferred seat number: ")
-    card_type = input("Your card type: ")
-    card_number = input("Your card number: ")
-    card_cvc = input("Your card cvc: ")
-    card_holder = input("Card holder name: ")
+    # name = input("Your full name: ")
+    # seat_id = input("Preferred seat number: ")
+    # card_type = input("Your card type: ")
+    # card_number = input("Your card number: ")
+    # card_cvc = input("Your card cvc: ")
+    # card_holder = input("Card holder name: ")
+
+    name = 'roman'
+    seat_id = 'B5'
+    card_type = 'Visa'
+    card_number = 12345678
+    card_cvc = 123
+    card_holder = 'John Smith'
 
     user = User(name=name)
     seat = Seat(seat_id=seat_id)
