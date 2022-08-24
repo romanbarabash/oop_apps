@@ -1,4 +1,4 @@
-from tickets_booking_app.app.dbmanager import DbManager
+from tickets_booking_app.app.db_manager import DbManager
 
 db = DbManager(file_name='../db/cinema.db')
 cinema_db = db.get_db()
