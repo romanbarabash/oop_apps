@@ -45,4 +45,4 @@ class Ticket:
         pdf.cell(w=0, h=25, txt=str(self.seat_number), border=1, ln=1)
         pdf.cell(w=0, h=5, txt="", border=0, ln=1)
 
-        pdf.output("sample.pdf", 'F')
+        pdf.output("ticket\sample.pdf", 'F')

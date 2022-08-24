@@ -3,19 +3,12 @@ from tickets_booking_app.app.seat import Seat
 from tickets_booking_app.app.user import User
 
 if __name__ == "__main__":
-    # name = input("Your full name: ")
-    # seat_id = input("Preferred seat number: ")
-    # card_type = input("Your card type: ")
-    # card_number = input("Your card number: ")
-    # card_cvc = input("Your card cvc: ")
-    # card_holder = input("Card holder name: ")
-
-    name = 'roman'
-    seat_id = 'B4'
-    card_type = 'Visa'
-    card_number = 12345678
-    card_cvc = 123
-    card_holder = 'John Smith'
+    name = input("Your full name: ")
+    seat_id = input("Preferred seat number: ")
+    card_type = input("Your card type: ")
+    card_number = input("Your card number: ")
+    card_cvc = input("Your card cvc: ")
+    card_holder = input("Card holder name: ")
 
     user = User(name=name)
     seat = Seat(seat_id=seat_id)
