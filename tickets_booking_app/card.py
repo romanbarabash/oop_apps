@@ -1,15 +1,12 @@
-from sqlalchemy import create_engine, MetaData, Table
+from tickets_booking_app.dbmanager import DbManager
 
-banking_db_path = "C:\\Users\\RomanBarabash\\PycharmProjects\\oop_apps\\tickets_booking_app\\banking.db"
-banking_db = create_engine(f'sqlite:///{banking_db_path}', echo=True)
-banking_db_metadata = MetaData()
-card_table = Table('Card', banking_db_metadata, autoload=True, autoload_with=banking_db)
+db = DbManager(file_name='banking.db')
+banking_db = db.get_db()
+card_table = db.get_table(table_name='Card')
 
 
 class Card:
     """ Represents a bank card needed to finalize a Seat purchase"""
-
-    database = "banking.db"
 
     def __init__(self, type, number, cvc, holder):
         self.holder = holder

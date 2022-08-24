@@ -1,9 +1,8 @@
-from sqlalchemy import create_engine, MetaData, Table
+from tickets_booking_app.dbmanager import DbManager
 
-cinema_db_path = "C:\\Users\\RomanBarabash\\PycharmProjects\\oop_apps\\tickets_booking_app\\cinema.db"
-cinema_db = create_engine(f'sqlite:///{cinema_db_path}', echo=True)
-cinema_db_metadata = MetaData()
-seat_table = Table('Seat', cinema_db_metadata, autoload=True, autoload_with=cinema_db)
+db = DbManager(file_name='cinema.db')
+cinema_db = db.get_db()
+seat_table = db.get_table(table_name='Seat')
 
 
 class Seat:
