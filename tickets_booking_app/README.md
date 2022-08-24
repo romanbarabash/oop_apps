@@ -1,0 +1,1 @@
+Run under app/app.py as python file, output pdf will be generated under app/ticket/sample.pdf
