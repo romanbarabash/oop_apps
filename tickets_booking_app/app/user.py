@@ -1,4 +1,4 @@
-from tickets_booking_app.ticket import Ticket
+from tickets_booking_app.app.ticket import Ticket
 
 
 class User:
