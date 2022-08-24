@@ -14,8 +14,8 @@ class User:
                 seat.occupy()
                 ticket = Ticket(user=self, price=seat.get_price(), seat_number=seat.seat_id)
                 ticket.to_pdf()
-                return "Purchase successful!"
+                return "Purchase successful."
             else:
-                return "There was a problem with your card!"
+                return "There was a problem with your card."
         else:
-            return "Seat is taken!"
+            return "This seat is taken, try different seat."

@@ -15,9 +15,7 @@ class Card:
         self.type = type
 
     def validate(self, price):
-        """Checks if Card is valid and has balance. Subtracts price from balance.
-        """
-
+        """Checks if Card is valid and has balance. Subtracts price from balance. """
         with banking_db.connect() as conn:
             card_row = conn.execute(card_table
                                     .select()
