@@ -12,7 +12,7 @@ class NewsFeed:
         self.to_date = to_date
         self.language = language
 
-    def get(self):
+    def get_email_body(self):
         url = self._build_url()
 
         articles = self._get_articles(url)

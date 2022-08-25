@@ -13,14 +13,12 @@ def get_contacts_table():
 
 
 def get_news_feed(row, from_date, to_date):
-    return NewsFeed(interest=row['interest'],
-                    from_date=from_date,
-                    to_date=to_date)
+    return NewsFeed(interest=row['interest'], from_date=from_date, to_date=to_date) \
+        .get_email_body()
 
 
 def get_email(user, password):
-    return yagmail.SMTP(user=user,
-                        password=password)
+    return yagmail.SMTP(user=user, password=password)
 
 
 def send_emails_to_contacts():
@@ -33,7 +31,7 @@ def send_emails_to_contacts():
                   subject=f"Your {row['interest']} news for today!",
                   contents=f"Hi {row['name']}\n\n "
                            f"See what's on about {row['interest']} today.\n\n"
-                           f"{get_news_feed(row, yesterday, today).get()}\nRoman")
+                           f"{get_news_feed(row, yesterday, today)}\nRoman")
 
 
 x = datetime.datetime.today()
