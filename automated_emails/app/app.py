@@ -35,9 +35,9 @@ def send_emails_to_contacts():
 
 
 x = datetime.datetime.today()
-y = x.replace(day=x.day + 1, hour=9, minute=0, second=0, microsecond=0)
+y = x.replace(day=x.day, hour=9, minute=0, second=0, microsecond=0) + datetime.timedelta(days=1)
 delta_t = y - x
-secs = delta_t.seconds + 1
+secs = delta_t.total_seconds()
 
 t = Timer(secs, send_emails_to_contacts)
 t.start()
