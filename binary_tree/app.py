@@ -10,3 +10,4 @@ for i in range(0, 10):
 
 tree.in_order()
 
+tree.find(100)

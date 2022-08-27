@@ -35,7 +35,8 @@ class BinaryTree:
                 current_node = current_node.right
             else:
                 current_node = current_node.left
-        raise LookupError(f'A node with value {value} was not found.')
+        warnings.warn(f'A node with value {value} was not found.')
+
 
     def in_order(self):
         self._in_order_recursive(self.head)
